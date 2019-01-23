@@ -1,1 +1,125 @@
 @import 'http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css';
+
+/* App.js General Desktop CSS */
+.container-fluid {
+  padding: 0 45px;
+}
+
+/* App.js General Mobile CSS */
+@media only screen and (max-width: 812px) {
+  .container-fluid {
+    padding: 0 15px;
+  }
+}
+
+/* Header Desktop CSS */
+.navbar {
+  justify-content: space-between;
+  padding: 8px 25px;
+}
+.navbar-brand {
+  margin-right: 20px;
+}
+
+/* Header Mobile CSS */
+@media only screen and (max-width: 812px) {
+  .navbar {
+    padding: 8px 16px;
+  }
+  .navbar-nav {
+    display: none;
+  }
+}
+
+/* Content Desktop CSS */
+.rendered-datamap {
+  background-color: #dee2e6;
+  padding-top: 20px;
+}
+.datamap {
+  width: -30px;
+}
+.table td {
+  padding: .25rem;
+}
+.btn-group-sm > .btn, .btn-sm {
+  padding: .2rem .4rem;
+}
+label {
+  margin-top: 10px;
+}
+.desktophide {
+  display: none;
+}
+
+/* Content Mobile CSS */
+@media only screen and (max-width: 812px) {
+  .rendered-datamap, .mobilehide {
+    display: none;
+  }
+  .desktophide {
+    display: inherit;
+  }
+  .createanevent {
+    margin: 10px 0;
+  }
+}
+
+/* Footer Desktop CSS */
+.footer {
+  margin-top: 15px;
+  background-color: #343a40;
+  color: RGBA(255,255,255,.5);
+  padding: 12px 25px;
+  height: 50px;
+}
+
+/* Footer Mobile CSS */
+@media only screen and (max-width: 812px) {
+  .footer {
+    height: 75px;
+  }
+}
+
+/* Error Desktop CSS */
+.error404 {
+  padding-top: 100px;
+  padding-left: 20px;
+  font-size: 30px;
+}
+
+/* Error Mobile CSS */
+.error404 {
+  padding-top: 30px;
+  padding-left: 15px;
+  padding-bottom: 30px;
+  font-size: 20px;
+}
+
+
+
+
+
+
+
+/*
+
+
+@media only screen and (max-width: 812px) {
+  .rendered-datamap, #choropleth_map, .NavBarCollapse, .events--list {
+    display: none;
+  }
+
+  .mobilecontent {
+    min-height: calc(100vh - 193px);
+  }
+
+  .content {
+    display: none;
+  }
+
+  .footer {
+    height: 65px;
+  }
+}
+*/

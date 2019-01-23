@@ -1,45 +1,28 @@
 import React, { Component } from 'react';
-import { BrowserRouter } from 'react-router-dom'
-import { Route } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom';
 
-import  CustomersList from './CustomersList'
-import  CustomerCreateUpdate  from './CustomerCreateUpdate'
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faClock } from '@fortawesome/free-solid-svg-icons';
+
 import './App.css';
+import Header from './components/Header';
+import Content from './components/Content';
+import Footer from './components/Footer';
 
-const BaseLayout = () => (
-  <div className="container-fluid">
-<nav className="navbar navbar-expand-lg navbar-light bg-light">
-  <a className="navbar-brand" href="http://178.62.46.131:3000">Platinum Test</a>
-  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span className="navbar-toggler-icon"></span>
-  </button>
-  <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div className="navbar-nav">
-      <a className="nav-item nav-link" href="/">CUSTOMERS</a>
-      <a className="nav-item nav-link" href="/customer">CREATE CUSTOMER</a>
+library.add(faClock);
 
-    </div>
-  </div>
-</nav>
-
-    <div className="content">
-      <Route path="/" exact component={CustomersList} />
-      <Route path="/customer/:pk"  component={CustomerCreateUpdate} />
-      <Route path="/customer/" exact component={CustomerCreateUpdate} />
-
-    </div>
-
-  </div>
-)
-
+// This is where the magic happens
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <BaseLayout/>
+        <div className="container-fluid">
+          <Header />
+          <Content />
+          <Footer />
+        </div>
       </BrowserRouter>
     );
   }
-}
-
+};
 export default App;
