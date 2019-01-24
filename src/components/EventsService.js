@@ -26,4 +26,8 @@ export default class EventsService{
         const url = `${API_URL}/api/events/${eventobj.pk}`;
         return axios.put(url,eventobj);
     }
+    getEventMap(date) {
+      const url = `${API_URL}/api/events/${date}`;
+      return axios.get(url).then(response => response.data);
+    }
 }

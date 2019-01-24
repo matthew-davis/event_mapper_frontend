@@ -19,6 +19,7 @@ class EventCreateUpdate extends Component {
             this.refs.when.value = c.DateAdded;
             this.refs.wherelatitude.value = c.ActionGeo_Lat;
             this.refs.wherelongitude.value = c.ActionGeo_Long;
+            this.refs.iso3166.value = c.DataMapCountry;
             this.refs.howbadisit.value = c.GoldsteinScale;
             this.refs.category.value = c.EventCode;
           })
@@ -31,7 +32,7 @@ class EventCreateUpdate extends Component {
           hour = ('0' + currentDate.getHours()).slice(-2),
           minute = ('0' + currentDate.getMinutes()).slice(-2),
           second = ('0' + currentDate.getSeconds()).slice(-2);
-          document.getElementById('dateofevent').value = day + '/' + month + '/' + year + ' ' + hour + ':' + minute + ':' + second;
+          document.getElementById('dateofevent').value = year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second;
 
           if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(showPosition);
@@ -53,6 +54,7 @@ class EventCreateUpdate extends Component {
             "DateAdded": this.refs.when.value,
             "ActionGeo_Lat": this.refs.wherelatitude.value,
             "ActionGeo_Long": this.refs.wherelongitude.value,
+            "DataMapCountry": this.refs.iso3166.value,
             "GoldsteinScale": this.refs.howbadisit.value,
             "EventCode": this.refs.category.value
         }
@@ -72,6 +74,7 @@ class EventCreateUpdate extends Component {
             "DateAdded": this.refs.when.value,
             "ActionGeo_Lat": this.refs.wherelatitude.value,
             "ActionGeo_Long": this.refs.wherelongitude.value,
+            "DataMapCountry": this.refs.iso3166.value,
             "GoldsteinScale": this.refs.howbadisit.value,
             "EventCode": this.refs.category.value
         }
@@ -112,6 +115,8 @@ class EventCreateUpdate extends Component {
                   <input id="formlatitude" className="form-control" disabled="disabled" type="text" ref='wherelatitude' value="56.4581" />
                   <label>Where Longitude?</label>
                   <input id="formlongitude" className="form-control" disabled="disabled" type="text" ref='wherelongitude' value="2.9858" />
+                  <label>ISO 3166 Alpha 3 Country Code?</label>
+                  <input className="form-control" type="text" ref='iso3166' />
                   <label>How Bad is it?</label>
                   <input className="form-control" disabled="disabled" type="text" ref='howbadisit' value="0.0" />
                   <label>Category?</label>
@@ -145,9 +150,9 @@ class EventCreateUpdate extends Component {
               </form>
             </div>
             <div className="col-md-6 mobilehide">
-
-              <p>Fill This space up!</p>
-
+              <p>&nbsp;</p>
+              <p><strong>Image / Video Upload Section</strong></p>
+              <p>It's selfie time!</p>
             </div>
           </div>
         );
